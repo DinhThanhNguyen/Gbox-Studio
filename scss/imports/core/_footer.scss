@@ -1,0 +1,125 @@
+footer {
+	height: 640px;
+	background-image: url(../img/bg-footer.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	.container{
+		.footer__left{
+			ul{
+				li{
+					@include text($fz-text, 'SB', $lh-text-infor, $black-cl, upperCase);
+					letter-spacing: 1px;
+					&:nth-child(3){
+						margin: 30px 0;
+					}
+				}
+			}
+		}
+		.footer__right{
+			p{
+				@include text($fz-text, 'SB', $lh-text-infor, $black-cl, upperCase);
+				letter-spacing: 1px;
+			}
+			&-form{
+				#form-footer{
+					margin-top: 10px;
+					.form-group{
+						.form-label{
+							margin-top: 20px;
+							@include text($fz-text-m, 'SB', $lh-text-infor, $black-cl, none);
+						}
+						.form-control{
+							border: 0;
+							outline: none;
+							background: none;
+							border-bottom: 1px solid $black-cl;
+							@include text($fz-text-m, 'SB', $lh-textbox, $black-cl, none);
+						}
+						.form-message{
+							font-size: $fz-text-m;
+							line-height: 1;
+							padding: 4px 0 0;
+						}
+						&.invalid .form-control{
+							border-bottom: 1px solid #f33a58;
+						}
+					}
+				}
+				.form-footer__submit{
+					margin-left: 15px;
+					margin-right: 15px;
+					margin-top: auto;
+					margin-left: auto;
+					text-align: center;
+					outline: none;
+					background: none;
+					background-color: $black-cl;
+					border: 1px solid $black-cl;
+					cursor: pointer;
+					@include transition(all $t linear);
+					text-align: center;
+					padding-top: 8px;
+					padding-bottom: 8px;
+					@include text($fz-text, 'SB', 1, $white-cl, upperCase);
+					&:hover{
+						background-color: $white-cl;
+						color: $black-cl;
+					}
+				}
+			}
+		}
+	}
+	.footer__bottom{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding-top: 80px;
+		.backtotop{
+			width: 20px;
+			padding-bottom: 15px;
+			cursor: pointer;
+			@include transform(translateY(0));
+			@include transition($t);
+			.image{
+				width: 30px;
+			}
+			&:hover{
+				@include transform(translateY(-10px));
+				@include transition($t);
+			}
+		}
+		.copyright{
+			p{
+				@include text($fz-text, 'SB', $lh-text-infor, $black-cl, upperCase);
+			}
+		}
+	}
+	@include tablet {
+		height: 615px;
+		background-size: 100% 460px;
+		.container{
+			padding-top: 20px;
+		}
+	}
+	@include mobile {
+		height: 500px;
+		background-size: 100% 255px;
+		.container{
+			.footer__left{
+				width: 100%;
+				text-align: center;
+				ul{
+					li{
+						&:nth-child(3){
+							margin: unset;
+						}
+					}
+				}
+			}
+			.footer__right{
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,216 @@
+.studio-rental {
+    .rental {
+        --pdsection: 70px;
+        .container {
+            &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $black-cl;
+                display: block;
+                margin-bottom: 55px;
+            }
+        }
+        &__infor {
+            max-height: 640px;
+            background-color: $title-main-cl;
+            padding-top: var(--pdsection);
+            .acreage {
+                h4 {
+                    @include text(32px, "EX", $lh-text-infor, $white-cl, upperCase);
+                    letter-spacing: 1px;
+                    padding: 30px 0 25px 0;
+                }
+                ul {
+                    li {
+                        @include text(14px, "Regular", $lh-textbox, $white-cl, none);
+                    }
+                }
+            }
+        }
+        &__form {
+            h2 {
+                padding-top: var(--pdsection);
+                @include text(28px, "EX", $lh-text-infor, $black-cl, none);
+            }
+            .form-group {
+                .form-label {
+                    margin-top: 20px;
+                    @include text($fz-text, $primary-font, $lh-textbox, $black-cl, none);
+                }
+                .form-control {
+                    border: 0;
+                    outline: none;
+                    background: none;
+                    border-bottom: 1px solid $black-cl;
+                    @include text($fz-text-m, $primary-font, $lh-textbox, $black-cl, none);
+                }
+                .textarea {
+                    border: 1px solid $black-cl;
+                    outline: none;
+                    background: none;
+                    resize: none;
+                    font-size: $fz-text;
+                }
+                .form-message {
+                    font-size: $fz-text;
+                    line-height: $lh-textbox;
+                    padding: 4px 0 0;
+                }
+                &.invalid .form-control {
+                    border-bottom: 1px solid #f33a58;
+                }
+                &.--full-border {
+                    .form-control {
+                        padding: 8px 12px;
+                        border: 1px solid $black-cl;
+                    }
+                }
+            }
+            .studio {
+                @include text($fz-text, $primary-font, 66px, $black-cl, none);
+            }
+            .studio__order {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 47%;
+                &-number {
+                    border: 1px solid $black-cl;
+                    background-color: $black-cl;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    p {
+                        @include midflex;
+                        @include text(20px, $secondary-font, 38px, #f4f4f4, upperCase);
+                    }
+                    &:hover {
+                        background-color: $main-bg-cl;
+                        p {
+                            color: $black-cl;
+                        }
+                    }
+                    &.select {
+                        background-color: $main-bg-cl;
+                        p {
+                            color: $black-cl;
+                        }
+                    }
+                }
+            }
+            .booking-detail{
+                .note {
+                    margin-top: 10px;
+                    display: inline-block;
+                    @include text($fz-text, $primary-font, 1, $black-cl, none);
+                }
+                &__date {
+                    display: flex;
+                    position: relative;
+                    & .form-group {
+                        width: 50%;
+                        &:first-child {
+                            margin-right: 30px;
+                        }
+                    }
+                    div.t-check-in, div.t-check-out {
+                        border: 1px solid $black-cl;
+                    }
+                }
+                .right-arrow {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 10%;
+                    transform: translateX(-50%);
+                    height: 20px;
+                    svg {
+                        width: 20px;
+                    }
+                    svg {
+                        * {
+                            fill: #525355;
+                        }
+                    }
+                }
+            }
+            .booking {
+                width: 100%;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                margin: 65px auto;
+                border: none;
+                outline: none;
+                background: none;
+                & p {
+                    max-width: 200px;
+                    text-align: left;
+                    padding-left: 1rem;
+                    width: 60%;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+                &__now {
+                    margin-left: 0;
+                    @include midflex;
+                    @include text(20px, "EX", 1, $main-bg-cl, upperCase);
+                    @include transition(all $t linear);
+                }
+                &__now:hover {
+                    color: $title-main-cl;
+                }
+            }
+        }
+        @include mobile {
+            &__infor {
+                background-color: initial;
+                --pdsection: 35px;
+                display: flex;
+                .acreage {
+                    margin-left: 25px;
+                    h4 {
+                        padding: 0;
+                        color: $black-cl;
+                    }
+                    ul > li {
+                        color: $black-cl;
+                    }
+                }
+            }
+            .rental__form {
+                .studio__order {
+                    max-width: 60%;
+                }
+                .booking-detail {
+                    .form-group {
+                        .note {
+                            @include hidden;
+                        }
+                    }
+                    &__date {
+                        flex-direction: column;
+                        .form-group {
+                            width: 100%;
+                        }
+                        .right-arrow {
+                            bottom: 31%;
+                            transform: translateX(-50%) rotate(90deg);
+                        }
+                    }
+                }
+                .booking {
+                    flex-direction: column;
+                    align-items: center;
+                    p {
+                        padding-left: 0;
+                        text-align: center;
+                    }
+                    &__now {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

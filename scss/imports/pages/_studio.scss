@@ -1,0 +1,99 @@
+.studio {
+    .container {
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $title-main-cl;
+            margin: 55px 0;
+        }
+    }
+    .studio__list {
+        &-item {
+            margin-top: 50px;
+            .studio-thumbnail {
+                position: relative;
+                overflow: hidden;
+                img {
+                    @include transition(all $t linear);
+                }
+                &::before {
+                    content: "";
+                    background-color: rgba($color: $black-cl, $alpha: 0.3);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 1;
+                    pointer-events: none;
+                }
+            }
+            .studio__description {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include transition(all $t linear);
+                .acreage {
+                    h3 {
+                        @include text($fz-text, $primary-font, $lh-text-infor, $black-cl, upperCase);
+                    }
+                    ul {
+                        li {
+                            @include text($fz-text, $primary-font, $lh-textbox, $black-cl, none);
+                        }
+                    }
+                }
+            }
+            .show-more {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding-right: 15px;
+                p {
+                    @include text($fz-text, "SB", $lh-text-infor, $black-cl, upperCase);
+                }
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    @include transition(all $t linear);
+                }
+            }
+            &:hover {
+                .studio-thumbnail {
+                    img {
+                        @include transform(scale(1.07));
+                    }
+                    &::before {
+                        display: none;
+                    }
+                }
+                .studio__description {
+                    background-color: #525355;
+                    .acreage {
+                        h3 {
+                            color: $white-cl;
+                        }
+                        ul {
+                            li {
+                                color: $white-cl;
+                            }
+                        }
+                    }
+                    .show-more {
+                        p {
+                            color: $white-cl;
+                        }
+                        svg {
+                            @include transform(translateY(10px));
+                            * {
+                                fill: $main-bg-cl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
