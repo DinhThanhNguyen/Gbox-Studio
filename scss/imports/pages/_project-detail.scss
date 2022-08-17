@@ -19,14 +19,10 @@
             }
         }
         &-image {
-            position: relative;
-            width: 100%;
-            height: 530px;
+            max-height: 580px;
             overflow: hidden;
-            cursor: pointer;
             .image{
                 width: 100%;
-                height: 100%;
                 object-fit: cover;
             }
             .flickity-button {
@@ -77,33 +73,13 @@
                 }
             }
         }
-        @media screen and (min-width: 768px) and (max-width: 922px) {
-            .project__details {
-                &-image {
-                    height: 420px;
-                }
-            }
-        }
-        @media screen and (max-width: 767px) {
-            .project__details {
-                &-image {
-                    height: 250px;
-                }
-            }
-        }
         @include mobile{
-            .project__details-control{
-                margin: 0 12px;
-            }
             .project__details-infor{
                 flex-direction: column-reverse;
                 margin: 0 12px;
-                padding-top: 40px;
-                .description{
-                    max-width: initial;
-                }
+                padding-top: 25px;
                 .client{
-                    padding: 45px 0;
+                    padding: 25px 0;
                 }
             }
         }

@@ -187,18 +187,17 @@ function cafePage() {
 
 function studioDetailPage() {
   let mainCarousel = $(".main-carousel");
-  $(document).ready(function () {
-    mainCarousel.flickity({
-      // options
-      cellAlign: "left",
-      contain: true,
-      wrapAround: true,
-      draggable: false,
-      prevNextButtons: false,
-      pageDots: false,
-      autoPlay: true,
-      autoPlay: 5000
-    });
+
+  mainCarousel.flickity({
+    // options
+    cellAlign: "left",
+    contain: true,
+    wrapAround: true,
+    draggable: false,
+    prevNextButtons: false,
+    pageDots: false,
+    autoPlay: true,
+    autoPlay: 5000
   });
   $(".flickity-prev").on("click", function () {
     mainCarousel.flickity("previous");
@@ -216,22 +215,8 @@ function projectDetailPage() {
     freeScroll: false,
     prevNextButtons: true,
     pageDots: false,
-    // autoPlay: true,
-    // autoPlay: 5000,
-    cellAlign: 'center',
+    cellAlign: 'left',
   })
-
-  // flkty = $carousel.data('flickity')
-  // let $imgs = $('.project__details-image img');
-  // console.log($imgs);
-  // $carousel.on('scroll.flickity', function () {
-  //   flkty.slides.forEach(function (slide, i) {
-  //     var img = $imgs[i];
-  //     var x = (slide.target + flkty.x) * -1 / 2;
-  //     console.log(x);
-  //     img.style.transform = 'translateX( ' + x + 'px)';
-  //   });
-  // });
 }
 projectDetailPage();
 
