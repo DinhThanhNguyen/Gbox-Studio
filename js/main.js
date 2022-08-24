@@ -5,6 +5,7 @@ $(window).on("load", function () {
   validateFormFooter();
   backToTop();
   projectDetailPage();
+  studioDetailPage();
   studioRetalPage();
   cafePage();
 
@@ -207,7 +208,6 @@ function studioDetailPage() {
     mainCarousel.flickity("next");
   });
 }
-studioDetailPage();
 
 function projectDetailPage() {
   var $carousel = $(".project__details-image").flickity({
