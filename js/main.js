@@ -4,6 +4,7 @@ $(window).on("load", function () {
   toggleMenuInMobile();
   validateFormFooter();
   backToTop();
+  projectDetailPage();
   studioRetalPage();
   cafePage();
 
@@ -218,7 +219,6 @@ function projectDetailPage() {
     cellAlign: 'left',
   })
 }
-projectDetailPage();
 
 var initPhotoSwipeFromDOM = function (gallerySelector) {
   var parseThumbnailElements = function (el) {
